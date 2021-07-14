@@ -1,0 +1,17 @@
+{
+    "name": "acruz/test-zinobe",
+    "description": "Prueba PHP Zinobe",
+    "type": "project",
+    "require": {
+        "illuminate/database": "8.40.0",
+        "auth0/auth0-php": "7.9.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alexander Cruz",
+            "email": "alexander.cruz.ing@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
