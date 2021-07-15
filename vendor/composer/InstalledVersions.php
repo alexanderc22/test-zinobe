@@ -19,7 +19,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'bc35bfe4939d6f6c80cf17ccd041cfbe2576a430',
+    'reference' => '207bac45253cceabb7cf8113dda96633fee3d2f1',
     'name' => 'acruz/test-zinobe',
   ),
   'versions' => 
@@ -31,7 +31,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'bc35bfe4939d6f6c80cf17ccd041cfbe2576a430',
+      'reference' => '207bac45253cceabb7cf8113dda96633fee3d2f1',
     ),
     'auth0/auth0-php' => 
     array (
@@ -59,6 +59,16 @@ private static $installed = array (
       array (
       ),
       'reference' => 'c6a0da4f0e06aa5cd83a2c1a4e449fae98c8bad7',
+    ),
+    'graham-campbell/result-type' => 
+    array (
+      'pretty_version' => '1.0.x-dev',
+      'version' => '1.0.9999999.9999999-dev',
+      'aliases' => 
+      array (
+        0 => '9999999-dev',
+      ),
+      'reference' => 'cce288e91826d6d33d76b57f1ad4bdc3f3a8c1d6',
     ),
     'guzzlehttp/guzzle' => 
     array (
@@ -144,6 +154,16 @@ private static $installed = array (
       ),
       'reference' => '383e46e8942402503b381c4994a968a8ee642087',
     ),
+    'kriswallsmith/buzz' => 
+    array (
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
+      'aliases' => 
+      array (
+        0 => '9999999-dev',
+      ),
+      'reference' => 'e7468d13f33fb6656068372533f2a446602fef09',
+    ),
     'nesbot/carbon' => 
     array (
       'pretty_version' => 'dev-master',
@@ -153,6 +173,63 @@ private static $installed = array (
         0 => '2.x-dev',
       ),
       'reference' => 'dad1ee0c17daac295ab225bcc24a1a8f1582a40e',
+    ),
+    'nyholm/psr7' => 
+    array (
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
+      'aliases' => 
+      array (
+        0 => '1.4.x-dev',
+      ),
+      'reference' => '2212385b47153ea71b1c1b1374f8cb5e4f7892ec',
+    ),
+    'php-http/client-implementation' => 
+    array (
+      'provided' => 
+      array (
+        0 => '1.0',
+      ),
+    ),
+    'php-http/httplug' => 
+    array (
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
+      'aliases' => 
+      array (
+        0 => '2.x-dev',
+      ),
+      'reference' => '191a0a1b41ed026b717421931f8d3bd2514ffbf9',
+    ),
+    'php-http/message-factory' => 
+    array (
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
+      'aliases' => 
+      array (
+        0 => '1.0.x-dev',
+      ),
+      'reference' => '597f30e6dfd32a85fd7dbe58cb47554b5bad910e',
+    ),
+    'php-http/promise' => 
+    array (
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
+      'aliases' => 
+      array (
+        0 => '1.1.x-dev',
+      ),
+      'reference' => '4c4c1f9b7289a2ec57cde7f1e9762a5789506f88',
+    ),
+    'phpoption/phpoption' => 
+    array (
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
+      'aliases' => 
+      array (
+        0 => '1.7.x-dev',
+      ),
+      'reference' => '994ecccd8f3283ecf5ac33254543eb0ac946d525',
     ),
     'psr/container' => 
     array (
@@ -266,6 +343,15 @@ private static $installed = array (
       ),
       'reference' => '6f981ee24cf69ee7ce9736146d1c57c2780598a8',
     ),
+    'symfony/options-resolver' => 
+    array (
+      'pretty_version' => '5.4.x-dev',
+      'version' => '5.4.9999999.9999999-dev',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '05b35d6cc6227dc22fc053d0cfcd9f41000e2c80',
+    ),
     'symfony/polyfill-ctype' => 
     array (
       'pretty_version' => 'dev-main',
@@ -368,6 +454,16 @@ private static $installed = array (
       array (
         0 => '2.3',
       ),
+    ),
+    'vlucas/phpdotenv' => 
+    array (
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
+      'aliases' => 
+      array (
+        0 => '5.3.x-dev',
+      ),
+      'reference' => 'b83be80cedb862eeb030370cd7939f8333b1c496',
     ),
     'voku/portable-ascii' => 
     array (

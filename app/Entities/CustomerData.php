@@ -5,7 +5,7 @@ namespace App\Entities;
 use Illuminate\Database\Eloquent\Model;
 //use Illuminate\Support\Facades\DB;
 
-class User extends Model {
+class CustomerData extends Model {
 
 	public function index()
     {

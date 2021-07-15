@@ -4,7 +4,10 @@
     "type": "project",
     "require": {
         "illuminate/database": "8.40.0",
-        "auth0/auth0-php": "7.9.0"
+        "auth0/auth0-php": "7.9.0",
+        "vlucas/phpdotenv": "5.3.x-dev",
+        "kriswallsmith/buzz": "9999999-dev",
+        "nyholm/psr7": "1.4.x-dev"
     },
     "autoload": {
         "psr-4": {
