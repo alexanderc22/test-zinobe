@@ -1,15 +1,3 @@
-$main: #1ab188;
-$main-light: lighten($main,5%);
-$main-dark: darken($main,5%);
-
-$gray-light: #a0b3b0;
-$gray: #ddd;
-
-$thin: 300;
-$normal: 400;
-$bold: 600;
-$br: 4px;
-
 *, *:before, *:after {
   box-sizing: border-box;
 }
@@ -25,88 +13,73 @@ body {
 
 a {
   text-decoration:none;
-  color:$main;
+  color:#1ab188;
   transition:.5s ease;
-  &:hover {
-    color:$main-dark;
-  }
 }
 
+a:hover {
+    color:darken(#1ab188,5%);
+  }
+
 .form {
-  background:rgba(#13232f,.9);
+  background:#24313C;
   padding: 40px;
   max-width:600px;
   margin:40px auto;
-  border-radius:$br;
-  box-shadow:0 4px 10px 4px rgba(#13232f,.3);
+  border-radius:4px;
+  box-shadow:0 4px 10px 4px rgb(19 35 47 / 30%);
 }
 
-.tab-group {
+.nav-pills {
+  display: block;
   list-style:none;
   padding:0;
   margin:0 0 40px 0;
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
   }
-  li a {
-    display:block;
-    text-decoration:none;
-    padding:15px;
-    background:rgba($gray-light,.25);
-    color:$gray-light;
-    font-size:20px;
-    float:left;
-    width:50%;
-    text-align:center;
-    cursor:pointer;
-    transition:.5s ease;
-    &:hover {
-      background:$main-dark;
-      color:#fff;
-    }
+.nav-pills   li a {
+    display: block;
+    text-decoration: none;
+    padding: 15px;
+    background: rgba(160, 179, 176, 0.25);
+    color: #a0b3b0;
+    font-size: 20px;
+    float: left;
+    width: 50%;
+    text-align: center;
+    cursor: pointer;
+    transition: .5s ease;
   }
-  .active a {
-    background:$main;
+.nav-pills .active a {
+    background:#1ab188;
     color:#fff;
   }
-}
-
-.tab-content > div:last-child {
-  display:none;
-}
-
 
 h1 {
   text-align:center;
   color:#fff;
-  font-weight:$thin;
+  font-weight:300;
   margin:0 0 40px;
 }
 
 label {
-  position:absolute;
-  transform:translateY(6px);
-  left:13px;
-  color:rgba(#fff,.5);
-  transition:all 0.25s ease;
+  position: absolute;
+  transform: translateY(6px);
+  left: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  transition: all 0.25s ease;
   -webkit-backface-visibility: hidden;
   pointer-events: none;
-  font-size:22px;
-  .req {
-  	margin:2px;
-  	color:$main;
-  }
+  font-size: 22px;
 }
 
-label.active {
+label .active {
   transform:translateY(50px);
   left:2px;
-  font-size:14px;
-  .req {
-    opacity:0;
-  }
+  font-size:14px;  
+}
+label .req {
+  margin: 2px;
+  color: #1ab188;
 }
 
 label.highlight {
@@ -114,25 +87,37 @@ label.highlight {
 }
 
 input, textarea {
-  font-size:22px;
-  display:block;
-  width:100%;
-  height:100%;
-  padding:5px 10px;
-  background:none;
-  background-image:none;
-  border:1px solid $gray-light;
-  color:#fff;
-  border-radius:0;
-  transition:border-color .25s ease, box-shadow .25s ease;
-  &:focus {
-		outline:0;
-		border-color:$main;
-  }
+  font-size: 22px;
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 5px 10px;
+  background: none;
+  background-image: none;
+  border: 1px solid #a0b3b0;
+  color: #ffffff;
+  border-radius: 0;
+  transition: border-color .25s ease, box-shadow .25s ease;
+}
+.form-control {
+  font-size: 22px;
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 5px 10px;
+  background: none;
+  background-color: #24313C;
+  background-image: none;
+  border: 1px solid #a0b3b0;  
+  border-radius: 0;
+  transition: border-color .25s ease, box-shadow .25s ease;
+}
+.form-control option{
+  background-color: #24313C;
 }
 
 textarea {
-  border:2px solid $gray-light;
+  border:2px solid darken(#1ab188,5%);
   resize: vertical;
 }
 
@@ -141,22 +126,21 @@ textarea {
   margin-bottom:40px;
 }
 
-.top-row {
-  &:after {
+.top-row > div {
+    float:left;
+    width:48%;
+    margin-right:4%;
+  }
+
+.top-row > div:last-child { 
+      margin:0;
+    }
+
+.top-row:after {
     content: "";
     display: table;
     clear: both;
   }
-
-  > div {
-    float:left;
-    width:48%;
-    margin-right:4%;
-    &:last-child { 
-      margin:0;
-    }
-  }
-}
 
 .button {
   border:0;
@@ -164,17 +148,19 @@ textarea {
   border-radius:0;
   padding:15px 0;
   font-size:2rem;
-  font-weight:$bold;
+  font-weight:600;
   text-transform:uppercase;
   letter-spacing:.1em;
-  background:$main;
+  background:#1ab188;
   color:#fff;
   transition:all.5s ease;
   -webkit-appearance: none;
-  &:hover, &:focus {
-    background:$main-dark;
-  }
 }
+
+.button:hover, .button:focus {
+    background:#1ab188-dark;
+}
+
 
 .button-block {
   display:block;

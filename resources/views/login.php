@@ -3,90 +3,86 @@
 	<head>
     <meta charset="utf-8" />
 		<title>Test Zibone</title>
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>   
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>  
     <link rel="stylesheet" href="public/assets/style.css" />
-    <script src="public/assets/ini.js"></script>          
+    <script src="public/assets/ini.js"></script>       
 	</head>
   <body>
         
     <div class="container">
-      <div class="form">
-      
-          <ul class="tab-group">
-            <li class="tab active"><a href="#signup">Sign Up</a></li>
-            <li class="tab"><a href="#login">Log In</a></li>
-          </ul>
-            
-          <div class="tab-content">
-            <div id="signup">   
-              <h1>Sign Up for Free</h1>
+      <div class="form">  
+
+      <ul  class="nav nav-pills">
+        <li class="tab active" >
+          <a  href="#signup" data-toggle="tab">Sign Up</a>
+        </li>
+        <li class="tab" >
+          <a href="#login" data-toggle="tab">Log In</a>
+        </li>
+      </ul>
+      <div class="tab-content clearfix">
+        <div class="tab-pane active" id="signup">
+          <br>
+          <h1>New User</h1>
               
-              <form action="/" method="post">
+              <form action="<?php echo $_SERVER['REQUEST_URI']; ?>register" method="post">
               
                 <div class="top-row">
-                  <div class="field-wrap">
-                    <label>
-                      First Name<span class="req">*</span>
-                    </label>
-                    <input type="text" required autocomplete="off" />
+                  <div class="field-wrap">                    
+                    <input type="text" required autocomplete="off" name="name"  placeholder="Name *"/>
                   </div>
               
-                  <div class="field-wrap">
-                    <label>
-                      Last Name<span class="req">*</span>
-                    </label>
-                    <input type="text"required autocomplete="off"/>
+                  <div class="field-wrap">                    
+                    <input type="text"required autocomplete="off" name="document" placeholder="Document *" />
                   </div>
                 </div>
 
-                <div class="field-wrap">
-                  <label>
-                    Email Address<span class="req">*</span>
-                  </label>
-                  <input type="email"required autocomplete="off"/>
+                 <div class="field-wrap">
+                      <select class="form-control" id="exampleFormControlSelect1" name="countrie" >
+                          <option value="<?php echo $countrie['alpha2Code']; ?>" > Select Countrie <span class="req">*</span></option>
+                          <?php 
+                            
+                            foreach ($arrayCountries as $kc => $countrie) {
+                              ?>
+                              <option value="<?php echo $countrie['name'].'-'.$countrie['alpha2Code']; ?>" ><?php echo $countrie['name'].'  '.$countrie['alpha2Code']; ?></option>
+                              <?php                        
+                            }
+                          ?> 
+                      </select>
+                  </div>
+
+                <div class="field-wrap">                  
+                  <input type="email"required autocomplete="off" name="email" placeholder="Email *"/>
                 </div>
                 
-                <div class="field-wrap">
-                  <label>
-                    Set A Password<span class="req">*</span>
-                  </label>
-                  <input type="password"required autocomplete="off"/>
+                <div class="field-wrap">                  
+                  <input type="password"required autocomplete="off" name="password" placeholder="Password *"/>
                 </div>                
                 <button type="submit" class="button button-block"/>Get Started</button>
               
               </form>
-
-            </div>
-            
-            <div id="login">   
-              <h1>Welcome Back!</h1>
+        </div>
+        <div class="tab-pane" id="login">
+          <h1>Log In!</h1>
               
-              <form action="/" method="post">
+              <form action="<?php echo $_SERVER['REQUEST_URI']; ?>search" method="post">
               
-                <div class="field-wrap">
-                <label>
-                  Email Address<span class="req">*</span>
-                </label>
-                <input type="email"required autocomplete="off"/>
+                <div class="field-wrap">                
+                <input type="email"required autocomplete="off" name="email" placeholder="Email *"/>
               </div>
               
-              <div class="field-wrap">
-                <label>
-                  Password<span class="req">*</span>
-                </label>
-                <input type="password"required autocomplete="off"/>
+              <div class="field-wrap">                
+                <input type="password"required autocomplete="off" name="password" placeholder="Password *"/>
               </div>
-              
-              <p class="forgot"><a href="#">Forgot Password?</a></p>
-              
+                            
               <button class="button button-block"/>Log In</button>
               
               </form>
-
-            </div>
-            
-          </div><!-- tab-content -->
+        </div>
+      </div> 
             
       </div> <!-- /form -->
     	<div class="row">

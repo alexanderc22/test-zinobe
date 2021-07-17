@@ -5,6 +5,8 @@ require 'config/database.php';
 
 $usuarios = App\Entities\User::get();
 
+$arrayCountries = App\Entities\CustomerData::getCountries();
+
 $usuario  = 'eduardo';
 $password = '123456';
 if($usuario === 'eduardo' && $password === '123456')
