@@ -1,6 +1,8 @@
 <?php 
 use Illuminate\Database\Capsule\Manager as Capsule;
 
+define('URL_HOME', 'https://localhost/test-zinobe/');
+
 $conexion = new Capsule;
 
 $conexion->addConnection([

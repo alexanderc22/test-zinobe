@@ -3,27 +3,31 @@
 require 'vendor/autoload.php';
 require 'config/database.php';
 
-$usuarios = App\Entities\User::get();
+//$infoUserOld = App\Entities\User::where('email', '=', $_POST['email'])->where('password', '=', md5($_POST['password']))->get();
+$infoUserOld = App\Entities\User::where('email', '=', $_POST['email'])->where('password', '=', md5($_POST['password']))->get();
 
-print_r($_POST);
-
-$usuario  = 'eduardo';
-$password = '123456';
-if($usuario === 'eduardo' && $password === '123456')
-{
-    $test = App\Entities\Auth::SignIn([
-        'id' => 1,
-        'name' => 'Eduardo'
-    ]);
+foreach($infoUserOld as $item) {
+	$idUser   = $item->Id;
+	$emailUser = $item->email;
+	$passUser  = $item->password;
+	$nameUser  = $item->nombre;
+    $docUser   = $item->documento;
+    $tokenUser = $item->remember_token;
 }
-//echo $test;
 
-$token = $test;
+if($emailUser === $_POST['email'] && $passUser === md5($_POST['password']))
+{
+    $token = App\Entities\Auth::SignIn([
+	        'document' => $docUser,
+	        'name' => $nameUser
+	    ]);
+	if($token != $tokenUser){
+		App\Entities\User::where('Id', $idUser)->update(['remember_token'=>$token]);	
+	}
 
-var_dump(
-    App\Entities\Auth::GetData(
-        $token
-    )
-);
-
-include "resources/views/search.php";
+	include "resources/views/header.php";
+	include "resources/views/search.php";
+} else {
+	header("Location: ".URL_HOME);
+	die();
+}

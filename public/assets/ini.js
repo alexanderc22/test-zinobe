@@ -1,3 +1,6 @@
+    
+    var t=localStorage.getItem("token-z");
+    
 
     /*$('.form').find('input, textarea').on('keyup blur focus', function (e) {
             
