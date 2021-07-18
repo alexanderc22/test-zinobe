@@ -5,7 +5,13 @@ use Auth0\SDK\Auth0;*/
 
 $arrayUrl = explode('/', $_SERVER['REQUEST_URI']);
 
+$numUrl = count($arrayUrl) - 2;
+
 $parametro = end($arrayUrl);
+
+if($arrayUrl[$numUrl] == 'logout' ) 
+	$parametro = $arrayUrl[$numUrl];
+
 
 switch ($parametro) {
 	case '':		

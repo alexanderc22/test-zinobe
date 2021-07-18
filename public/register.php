@@ -12,13 +12,16 @@ if(!empty($_POST)){
 
 	if($infoUserOld){
 		$arrayCountries = App\Entities\CustomerData::getCountries();
-		$error = 'El correo '.$_POST['email'].' ya hace parte del sistema';
+		$error = 'El correo '.$_POST['email'].' ya existe';
 		include "resources/views/header.php";
 		include "resources/views/login.php";
 	} else {
 
+		$last = App\Entities\User::orderBy('Id', 'desc')->first();
+		$newlast = $last->Id + 1;
+
 		$token = App\Entities\Auth::SignIn([
-	        'document' => $_POST['document'],
+	        'id' => $newlast,
 	        'name' => $_POST['name']
 	    ]);
 
@@ -30,14 +33,16 @@ if(!empty($_POST)){
 		    'password'  	 => md5($_POST['password']),
 		    'remember_token' => $token
 		]);
-		include "resources/views/header.php";
-		//$_POST['token'] = $token;
+		
 		?>
 		<script>
 			localStorage.setItem('token-z', '<?php echo $token; ?>');
 		</script>
 		<?php
 
+		$consultas = '';
+
+		include "resources/views/header.php";
 		include "resources/views/search.php";
 		
 	}
@@ -46,8 +51,4 @@ if(!empty($_POST)){
 	header("Location: ".URL_HOME);
 	die();
 }
-//print_r($infoNewUser);
-
-//$infoNewUser = json_decode($infoNewUser);
-
 
